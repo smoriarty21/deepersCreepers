@@ -5,10 +5,11 @@ import urllib2
 import time
 import sys
 
-good = 'http://lpwiqq7bjenhkucm.onion/'
-bad = 'http://lpwiqq7bjenhk111.onion/'
+VERBOSE = False
 
 def hit_url(url):
+    global VERBOSE
+
     try:
         response = urllib2.urlopen(url)
         html = response.read()
@@ -18,13 +19,20 @@ def hit_url(url):
 
         print '{0} Is Live!'.format(url)
     except:
-        print '{0} Is Not Live'.format(url)
+        if VERBOSE:
+            print '{0} Is Not Live'.format(url)
 
 def main():
+    global VERBOSE
+
+    for arg in sys.argv:
+        if arg.lower() == '-v':
+            VERBOSE = True
     try:
         found_domains.create_table()
     except:
-        print 'Table Found'
+        if VERBOSE:
+            print 'Table Found'
     while True:
         hit_url(onion_gen.generate_url())
 
