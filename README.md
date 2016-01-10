@@ -3,7 +3,8 @@ Scrape the deep web for live urls
 
 # Requirements
 * PyGoogle
-    * - pip install pygoogle
+    * Installation
+        * pip install pygoogle
 
 # Arguments
 * -v / -V    Verbose Mode Enabled
