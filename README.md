@@ -5,8 +5,8 @@ Scrape the deep web for live urls
 #### PyGoogle  
 * PyGoogle is used by the spidering system to crawl google for tor urls  
 
-**Installation**    
-* pip install pygoogle
+	**Installation**    
+	`pip install pygoogle`
 
 # Arguments
 * -v / -V    Verbose Mode Enabled
