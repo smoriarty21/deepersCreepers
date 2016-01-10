@@ -7,7 +7,9 @@ PyGoogle
 
 # Arguments
 -v / -V    Verbose Mode Enabled
+
 -b / -B    Brute force URLs
+
 -s / -S    Scrape urls
 
 # Configuration
@@ -33,12 +35,12 @@ database engine.  Currently only sqlite and mongodb are supported for
 persistent result storage.
 
 Example configs:
-*   Sqlite
-        * engine: sqlite
-        * dir: database
-        * filename: onion
-*   MongoDb
-        * engine: mongodb
-        * host: 127.0.0.1
-        * port: 1234
-        * collection: onion
+* Sqlite
+    * engine: sqlite
+    * dir: database
+    * filename: onion
+* MongoDb
+    * engine: mongodb
+    * host: 127.0.0.1
+    * port: 1234
+    * collection: onion
