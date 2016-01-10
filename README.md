@@ -2,15 +2,13 @@
 Scrape the deep web for live urls
 
 # Requirements
-PyGoogle
-  - pip install pygoogle
+* PyGoogle
+    * - pip install pygoogle
 
 # Arguments
--v / -V    Verbose Mode Enabled
-
--b / -B    Brute force URLs
-
--s / -S    Scrape urls
+* -v / -V    Verbose Mode Enabled
+* -b / -B    Brute force URLs
+* -s / -S    Scrape urls
 
 # Configuration
 This script is configured using the 'config.ini' file inside of the 'config' folder.  Below we will look at each section of the configuration file.
