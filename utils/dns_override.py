@@ -7,9 +7,6 @@ import socket
 tor_server = str(config.get_tor_ip())
 tor_port = int(config.get_tor_port())
 
-print tor_server
-print tor_port
-
 def create_connection(address, timeout=None, source_address=None):
     sock = socks.socksocket()
     sock.connect(address)
