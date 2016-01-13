@@ -2,11 +2,17 @@
 Scrape the deep web for live urls
 
 # Requirements
-#### PyGoogle  
-* PyGoogle is used by the spidering system to crawl google for tor urls  
+#### PyGoogle
+* PyGoogle is used by the spidering system to crawl google for tor urls
 
-    **Installation**    
+    **Installation**
         `pip install pygoogle`
+
+#### Py Bing Search  
+* Py Bing Search is used for searching for crawling  
+
+    **Installation**  
+	`pip install py-bing-search`  
 
 # Arguments
 * -v / -V    Verbose Mode Enabled
@@ -35,11 +41,14 @@ This section contains all of the configuration information for your
 database engine.  Currently only sqlite and mongodb are supported for
 persistent result storage.
 
+# TODO: Explain each key for both engines
+
 Example configs:
 * Sqlite
     * engine: sqlite
     * dir: database
     * filename: onion
+    * tablename: url_list
 * MongoDb
     * engine: mongodb
     * host: 127.0.0.1

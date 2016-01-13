@@ -1,26 +1,28 @@
-# Reset DNS Override
-import socks
-import config
-import socket
-
-def create_connection(address, timeout=None, source_address=None):
-    sock = socks.socksocket()
-    sock.connect(address)
-    return sock
-
-socks.setdefaultproxy(None)
-
-# patch the socket module
-socket.socket = socks.socksocket
-socket.create_connection = create_connection
-
 from pygoogle import pygoogle
-import spyder
+from py_bing_search import PyBingSearch
 
+def search_bing():
+    url_list = []
+
+    # Bing Search
+    bing = PyBingSearch('XXXX')
+    result_list, next_uri = bing.search('.onion link', limit=5, format='json')
+
+    for result in result_list:
+        url_list.append(result.url)
+
+    return url_list
+
+# Fuck googles abuse system
 def search_google():
     google = pygoogle('".onion"')
-    google.pages = 12
+    google.pages = 8
     urls = google.get_urls()
+    url_list = []
+    master_list = {}
+    count = 0
 
     for url in urls:
-        print url
+        url_list.append(url)
+
+    return url_list

@@ -1,4 +1,6 @@
-from utils import found_domains
+
+from utils import spider
+from utils import database
 from utils import dns_override
 from utils import url_scraper
 from utils import onion_gen
@@ -10,15 +12,17 @@ VERBOSE = False
 BRUTEFORCE = False
 SCRAPE = False
 
+# TODO: How high was I for this one? Move this shit
 def hit_url(url):
     global VERBOSE
 
     try:
         response = urllib2.urlopen(url)
         html = response.read()
+        print html
 
         # Save live url to db
-        found_domains.save_domain(url)
+        database.save_domain(url)
 
         print '{0} Is Live!'.format(url)
     except:
@@ -38,15 +42,19 @@ def main():
         elif arg.lower() == '-s':
             SCRAPE = True
     try:
-        found_domains.create_table()
+        database.initialize()
     except:
         if VERBOSE:
             print 'Table Found'
     if BRUTEFORCE:
         while True:
             hit_url(onion_gen.generate_url())
+
+        # DEBUGGING
+        #hit_url('http://sigaintz7qjj3val.onion/')
     elif SCRAPE:
-        url_scraper.search_google()
+        #url_scraper.search_google()
+        spider.start_crawl('bing')
 
 
 
