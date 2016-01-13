@@ -29,3 +29,6 @@ def get_db_collection():
 
 def get_db_table_name():
     return Config.get('database', 'tablename')
+
+def get_bing_api_key():
+    return Config.get('bing','api_key')

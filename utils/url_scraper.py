@@ -1,3 +1,4 @@
+import config
 from pygoogle import pygoogle
 from py_bing_search import PyBingSearch
 
@@ -5,7 +6,7 @@ def search_bing():
     url_list = []
 
     # Bing Search
-    bing = PyBingSearch('XXXX')
+    bing = PyBingSearch(config.get_bing_api_key())
     result_list, next_uri = bing.search('.onion link', limit=5, format='json')
 
     for result in result_list:
